@@ -1,0 +1,603 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+h1{
+    font-size: 400%;
+    color: #4c1364;
+    font-weight: bold;
+}
+
+img {
+    width: 10rem;
+    margin: 0 1rem;
+}
+
+
+/* header style */
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* nav style */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 150%;
+    text-decoration: none;
+    color: #67357D;
+    padding: 0.5rem;
+}
+
+.navbar a:hover {
+    color: yellow;
+}
+
+.signup-button {
+    margin-left: auto;
+    margin-right: 3rem;
+    font-size: 90%;
+    background-color: #67357D;
+    color: white;
+    border: none;
+    padding: 1rem;
+    box-shadow: .2rem .2rem 10px .1rem black;
+    text-decoration: none;
+}
+
+.signup-button:hover {
+    font-size: 85%;
+    background-color: #67357D;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+/* home style */
+
+section.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #67357D;
+    text-align: center;
+    background-image: url("../images/hero2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6rem; 
+    z-index: 1;
+}
+
+.home-content h1{
+    font-size: 3rem;
+    text-shadow: .1rem 0.1rem white;
+    font-weight: bold;
+}
+
+.home-content p{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.home-button {
+    margin-left: auto;
+    margin-right: 3rem;
+    font-size: 110%;
+    background-color: #67357D;
+    color: white;
+    border: none;
+    padding: 1rem;
+    box-shadow: .2rem .2rem 10px .1rem black;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.home-button:hover {
+    font-size: 110%;
+    background-color: #4c1364;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+/*book styles*/
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background: #bd8d70;
+    padding-top: 2rem;
+    z-index: 1;
+}
+
+.book-content{
+    width: 100%;
+}
+
+
+.book-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.book-options {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+}
+
+.book-options button {
+    background-color: #67357D;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 180%;
+    border-radius: 60%;
+    margin: 0 0.5rem;
+}
+
+.book-options button:hover, .book-options button:active {
+    cursor: pointer;
+    box-shadow: inset 0 0 10px black;
+}
+
+.book-content h3 {
+    font-size: 250%;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+.form-and-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 65%;
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.book-content form {
+    background-color: #67357D;
+    border-style: double;
+    border-color: white;
+    border-width: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 90%;
+    color: white;
+    padding: .2rem;
+    margin-left: 2rem;
+}
+
+input, select {
+    margin-left: auto;
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 90%;
+    color: #67357D;
+    width: 100%;
+}
+
+.form-group select{
+    height: 2rem;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.button-group {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+#book-button {
+    color: #4c1364;
+    background-color: white;
+    border: none;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: auto;
+    width: 50%;
+}
+
+.form-image {
+    width: 45%;
+    margin-left: 2rem;
+}
+
+.form-image img {
+    width: 200%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 50%;
+    margin-top: 3rem;
+}
+
+
+/* services style */
+.services {
+    padding: 3rem 2rem;
+    background-color: #EBEAEA;
+    text-align: center;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #67357D;
+    margin-bottom: 1rem;
+}
+
+.service-item h4 {
+    font-size: 1.5rem;
+    color: #67357D;
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555555;
+}
+
+
+
+/* packages style */
+.packages {
+    padding: 2rem;
+    background-color: #EBEAEA;
+    text-align: center;
+}
+
+.package-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.package-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: fit-content;
+    opacity: 1;
+}
+
+.package-item:hover {
+    transform: scale(1.05);
+}
+
+.package-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+.package-caption {
+    padding: 1rem;
+    background-color: #67357D;
+    color: white;
+}
+
+.package-caption h4 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.package-caption p {
+    margin: 0;
+    font-size: 1rem;
+    color: #BC9998;
+}
+
+.package-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* review style */
+.reviews {
+    padding: 3rem 2rem;
+    background-color: #EBEAEA;
+    text-align: center;
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.review-content {
+    background-color: #67357D;
+    color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+.review-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.review-content p {
+    font-size: 1.2rem;
+}
+
+.arrow {
+    background-color: #67357D;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: #4c1364;
+}
+
+.left-arrow {
+    left: -2.5rem;
+}
+
+.right-arrow {
+    right: -2.5rem;
+}
+
+
+/* contact style */
+
+.contact-us {
+    padding: 4rem 2rem;
+    background-color: #bd8d70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: #67357D;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #67357D;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.form-group textarea {
+    resize: none; /* Prevents user from resizing */
+    min-height: 100px; /* Ensures a minimum height for the text area */
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: #67357D;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #BC9998;
+}
+
+
+/* footer style */
+
+/* Footer Section */
+.footer {
+    background-color: #67357D; /* Background color for the footer */
+    color: white; /* Text color for the footer */
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 2rem; /* Size of the social media icons */
+    margin: 0 1rem; /* Space between icons */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: black; /* Change color on hover */
+    cursor: pointer;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+}
+
+
+
+
+@media screen and (max-width: 980px) {
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar a {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
+      .signup-button {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      /* Add a toggle button to show/hide the navigation menu */
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .nav-toggle:hover {
+        color: yellow;
+      }
+      /* Hide the navigation menu by default */
+      .navbar ul {
+        display: none;
+      }
+      /* Show the navigation menu when the toggle button is clicked */
+      .nav-toggle:checked ~ .navbar ul {
+        display: block;
+      }
+
+      
+      /* Services section */
+  .services {
+    padding: 2rem 1rem;
+  }
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Packages section */
+  .packages {
+    padding: 2rem 1rem;
+  }
+  .package-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Review section */
+  .reviews {
+    padding: 2rem 1rem;
+  }
+  .review-content {
+    padding: 1rem;
+  }
+  /* Contact section */
+  .contact-us {
+    padding: 2rem 1rem;
+  }
+  .contact-form {
+    padding: 1rem;
+  }
+}
