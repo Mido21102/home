@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelSite - Your Next Adventure Awaits</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        /* Header styles */
+        header {
+            background: #fff;
+            color: #333;
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: #66357C 3px solid;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header a {
+            color: #333;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header .logo {
+            float: left;
+        }
+        header .logo h1 {
+            margin: 0;
+            color: #66357C;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #login-signup {
+            float: right;
+        }
+        header .highlight, header .current a {
+            color: #66357C;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #66357C;
+            font-weight: bold;
+        }
+        /* Main content styles */
+        main {
+            padding-top: 100px;
+        }
+        /* Section styles */
+        section {
+            padding: 60px 0;
+        }
+        section h2 {
+            text-align: center;
+            color: #66357C;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        /* Hero section */
+        #hero {
+            background: linear-gradient(rgba(102, 53, 124, 0.7), rgba(102, 53, 124, 0.7)), url('https://source.unsplash.com/1600x900/?travel') no-repeat center center/cover;
+            text-align: center;
+            color: #fff;
+            padding: 100px 0;
+        }
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        /* Booking section */
+        #booking {
+            background: #f9f9f9;
+        }
+        .booking-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #booking-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #booking-tabs button {
+            margin: 0 10px;
+        }
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .form-control label {
+            display: block;
+            margin-bottom: 5px;
+            color: #66357C;
+        }
+        .form-control input, .form-control select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        /* Services section */
+        #services {
+            background: #fff;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-item {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .service-item h3 {
+            color: #66357C;
+            margin-bottom: 15px;
+        }
+        /* Packages section */
+        #packages {
+            background: #f9f9f9;
+        }
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .package-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .package-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .package-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .package-item-content {
+            padding: 20px;
+        }
+        .package-item h3 {
+            color: #66357C;
+            margin-bottom: 10px;
+        }
+        .package-item .price {
+            font-weight: bold;
+            color: #66357C;
+            margin: 10px 0;
+        }
+        /* About section */
+        #about {
+            background: #fff;
+        }
+        /* Contact section */
+        #contact {
+            background: #f9f9f9;
+        }
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        /* Footer styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        footer .social-links {
+            margin-top: 20px;
+        }
+        footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #66357C;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #4a2759;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+
+            
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="highlight">Travel</span>Site</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#hero">Home</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div id="login-signup">
+                <button class="btn" onclick="openModal('loginModal')">Login</button>
+                <button class="btn" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Book flights, hotels, and car rentals all in one place. Start your journey today!</p>
+                <a href="#booking" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section id="booking">
+            <div class="container">
+                <h2>Book Your Trip</h2>
+                <div class="booking-form">
+                    <div id="booking-tabs">
+                        <button class="btn" onclick="showBookingForm('flight')">Flight</button>
+                        <button class="btn" onclick="showBookingForm('hotel')">Hotel</button>
+                        <button class="btn" onclick="showBookingForm('car')">Car Rental</button>
+                    </div>
+                    <form id="flight-form" class="booking-form-content">
+                        <div class="form-control">
+                            <label for="origin">Origin</label>
+                            <input type="text" id="origin" placeholder="From">
+                        </div>
+                        <div class="form-control">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" placeholder="To">
+                        </div>
+                        <div class="form-control">
+                            <label for="departure">Departure</label>
+                            <input type="date" id="departure">
+                        </div>
+                        <div class="form-control">
+                            <label for="return">Return</label>
+                            <input type="date" id="return">
+                        </div>
+                        <div class="form-control">
+                            <label for="passengers">Passengers</label>
+                            <select id="passengers">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Flights</button>
+                    </form>
+                    <form id="hotel-form" class="booking-form-content" style="display:none;">
+                        <div class="form-control">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="Where are you going?">
+                        </div>
+                        <div class="form-control">
+                            <label for="check-in">Check-in</label>
+                            <input type="date" id="check-in">
+                        </div>
+                        <div class="form-control">
+                            <label for="check-out">Check-out</label>
+                            <input type="date" id="check-out">
+                        </div>
+                        <div class="form-control">
+                            <label for="rooms">Rooms</label>
+                            <select id="rooms">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="guests">Guests</label>
+                            <select id="guests">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Hotels</button>
+                    </form>
+                    <form id="car-form" class="booking-form-content" style="display:none;">
+                        <div class="form-control">
+                            <label for="pickup-location">Pickup Location</label>
+                            <input type="text" id="pickup-location" placeholder="Enter city or airport">
+                        </div>
+                        <div class="form-control">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date">
+                        </div>
+                        <div class="form-control">
+                            <label for="return-date">Return Date</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="form-control">
+                            <label for="car-type">Car Type</label>
+                            <select id="car-type">
+                                <option value="economy">Economy</option>
+                                <option value="compact">Compact</option>
+                                <option value="midsize">Midsize</option>
+                                <option value="fullsize">Full Size</option>
+                                <option value="suv">SUV</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Cars</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Visa Assistance</h3>
+                        <p>We provide comprehensive visa assistance to ensure a smooth travel experience.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Trip Planning</h3>
+                        <p>Our expert team helps you plan the perfect itinerary for your dream vacation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Hotel Bookings</h3>
+                        <p>We offer a wide range of accommodation options to suit every budget and preference.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Car Rentals</h3>
+                        <p>Explore your destination with ease using our convenient car rental services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Travel Packages</h2>
+                <div class="package-grid">
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?paris" alt="Paris Getaway">
+                        <div class="package-item-content">
+                            <h3>Paris Getaway</h3>
+                            <p>Experience the magic of the City of Light</p>
+                            <p class="price">From $999</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?tokyo" alt="Tokyo Adventure">
+                        <div class="package-item-content">
+                            <h3>Tokyo Adventure</h3>
+                            <p>Immerse yourself in Japan's vibrant capital</p>
+                            <p class="price">From $1299</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?safari" alt="African Safari">
+                        <div class="package-item-content">
+                            <h3>African Safari</h3>
+                            <p>Witness the wonders of wildlife up close</p>
+                            <p class="price">From $1599</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?greece" alt="Greek Islands Cruise">
+                        <div class="package-item-content">
+                            <h3>Greek Islands Cruise</h3>
+                            <p>Sail through the stunning Aegean Sea</p>
+                            <p class="price">From $1399</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>TravelSite is dedicated to providing unforgettable experiences to our clients. Our team of travel experts is committed to making your dream vacations a reality. With years of experience in the travel industry, we offer personalized service, competitive prices, and a wide range of options to suit every traveler's needs.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-control">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Message Subject" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 TravelSite. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-control">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-control">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-control">
+                    <label for="signup-name">Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Show/hide booking forms
+        function showBookingForm(formType) {
+            document.getElementById('flight-form').style.display = 'none';
+            document.getElementById('hotel-form').style.display = 'none';
+            document.getElementById('car-form').style.display = 'none';
+            document.getElementById(formType + '-form').style.display = 'block';
+        }
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Form submission handlers (you can add your own logic here)
+        document.getElementById('flight-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Flight search submitted!');
+        }
+
+        document.getElementById('hotel-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Hotel search submitted!');
+        }
+
+        document.getElementById('car-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Car rental search submitted!');
+        }
+
+        document.getElementById('contact-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Message sent!');
+        }
+
+        document.getElementById('login-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Login submitted!');
+            closeModal('loginModal');
+        }
+
+        document.getElementById('signup-form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Sign up submitted!');
+            closeModal('signupModal');
+        }
+    </script>
+</body>
+</html>
