@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelSite - Your Next Adventure Awaits</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span class="highlight">Travel</span>Site</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#hero">Home</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div id="login-signup">
+                <button class="btn" onclick="openModal('loginModal')">Login</button>
+                <button class="btn" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Discover Your Next Adventure</h1>
+                <p>Book flights, hotels, and car rentals all in one place. Start your journey today!</p>
+                <a href="#booking" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section id="booking">
+            <div class="container">
+                <h2>Book Your Trip</h2>
+                <div class="booking-form">
+                    <div id="booking-tabs">
+                        <button class="btn" onclick="showBookingForm('flight')">Flight</button>
+                        <button class="btn" onclick="showBookingForm('hotel')">Hotel</button>
+                        <button class="btn" onclick="showBookingForm('car')">Car Rental</button>
+                    </div>
+                    <form id="flight-form" class="booking-form-content">
+                        <div class="form-control">
+                            <label for="origin">Origin</label>
+                            <input type="text" id="origin" placeholder="From">
+                        </div>
+                        <div class="form-control">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" placeholder="To">
+                        </div>
+                        <div class="form-control">
+                            <label for="departure">Departure</label>
+                            <input type="date" id="departure">
+                        </div>
+                        <div class="form-control">
+                            <label for="return">Return</label>
+                            <input type="date" id="return">
+                        </div>
+                        <div class="form-control">
+                            <label for="passengers">Passengers</label>
+                            <select id="passengers">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Flights</button>
+                    </form>
+                    <form id="hotel-form" class="booking-form-content" style="display:none;">
+                        <div class="form-control">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" placeholder="Where are you going?">
+                        </div>
+                        <div class="form-control">
+                            <label for="check-in">Check-in</label>
+                            <input type="date" id="check-in">
+                        </div>
+                        <div class="form-control">
+                            <label for="check-out">Check-out</label>
+                            <input type="date" id="check-out">
+                        </div>
+                        <div class="form-control">
+                            <label for="rooms">Rooms</label>
+                            <select id="rooms">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <label for="guests">Guests</label>
+                            <select id="guests">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Hotels</button>
+                    </form>
+                    <form id="car-form" class="booking-form-content" style="display:none;">
+                        <div class="form-control">
+                            <label for="pickup-location">Pickup Location</label>
+                            <input type="text" id="pickup-location" placeholder="Enter city or airport">
+                        </div>
+                        <div class="form-control">
+                            <label for="pickup-date">Pickup Date</label>
+                            <input type="date" id="pickup-date">
+                        </div>
+                        <div class="form-control">
+                            <label for="return-date">Return Date</label>
+                            <input type="date" id="return-date">
+                        </div>
+                        <div class="form-control">
+                            <label for="car-type">Car Type</label>
+                            <select id="car-type">
+                                <option value="economy">Economy</option>
+                                <option value="compact">Compact</option>
+                                <option value="midsize">Midsize</option>
+                                <option value="fullsize">Full Size</option>
+                                <option value="suv">SUV</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Search Cars</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Visa Assistance</h3>
+                        <p>We provide comprehensive visa assistance to ensure a smooth travel experience.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Trip Planning</h3>
+                        <p>Our expert team helps you plan the perfect itinerary for your dream vacation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Hotel Bookings</h3>
+                        <p>We offer a wide range of accommodation options to suit every budget and preference.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Car Rentals</h3>
+                        <p>Explore your destination with ease using our convenient car rental services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <div class="container">
+                <h2>Travel Packages</h2>
+                <div class="package-grid">
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?paris" alt="Paris Getaway">
+                        <div class="package-item-content">
+                            <h3>Paris Getaway</h3>
+                            <p>Experience the magic of the City of Light</p>
+                            <p class="price">From $999</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?tokyo" alt="Tokyo Adventure">
+                        <div class="package-item-content">
+                            <h3>Tokyo Adventure</h3>
+                            <p>Immerse yourself in Japan's vibrant capital</p>
+                            <p class="price">From $1299</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?safari" alt="African Safari">
+                        <div class="package-item-content">
+                            <h3>African Safari</h3>
+                            <p>Witness the wonders of wildlife up close</p>
+                            <p class="price">From $1599</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-item">
+                        <img src="https://source.unsplash.com/300x200/?greece" alt="Greek Islands Cruise">
+                        <div class="package-item-content">
+                            <h3>Greek Islands Cruise</h3>
+                            <p>Sail through the stunning Aegean Sea</p>
+                            <p class="price">From $1399</p>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>TravelSite is dedicated to providing unforgettable experiences to our clients. Our team of travel experts is committed to making your dream vacations a reality. With years of experience in the travel industry, we offer personalized service, competitive prices, and a wide range of options to suit every traveler's needs.</p>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review-container">
+              <!-- Existing reviews will be dynamically added here -->
+            </div>
+            <form id="review-form">
+              <h3>Leave a Review</h3>
+              <input type="text" id="review-name" placeholder="Your Name" required>
+              <textarea id="review-text" placeholder="Your Review" required></textarea>
+              <div class="rating">
+                <span>Rating: </span>
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">☆</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">☆</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">☆</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">☆</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">☆</label>
+              </div>
+              <button type="submit">Submit Review</button>
+            </form>
+          </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-control">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Message Subject" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 TravelSite. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-control">
+                    <label for="login-phone">Phone Number</label>
+                    <input type="tel" id="login-phone" required>
+                </div>
+                <div class="form-control">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-control">
+                    <label for="signup-name">Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-phone">Phone Number</label>
+                    <input type="tel" id="signup-phone" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-control">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
